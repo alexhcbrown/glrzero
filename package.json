@@ -1,0 +1,16 @@
+{
+  "name": "glrzero",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.1"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "alexhcbrown",
+  "license": "MIT"
+}
