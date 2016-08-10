@@ -1,6 +1,6 @@
 var chai = require("chai"),
     assert = chai.assert;
-var state = require("../libs/State");
+var state = require("../lib/State");
 
 
 describe("State",function(){

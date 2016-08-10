@@ -1,11 +1,13 @@
-var Grammar = require("./libs/Grammar"),
-    State = require("./libs/Grammar");
+var Grammar = require("./lib/Grammar"),
+    State = require("./lib/State");
 
 var g = new Grammar(["A", "B"]);
 
 g.addRules({
 
-    'S' : [['S','A']]
+    'S' : [['A','S']]
 });
 
-console.log(g.buildActionTable("S").toTable());
+g.build('S');
+
+console.log(g.stateOptions,g.stateOptions.S[0].states);
