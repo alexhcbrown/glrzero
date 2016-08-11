@@ -12,5 +12,12 @@
     "test": "mocha"
   },
   "author": "alexhcbrown",
-  "license": "MIT"
+  "license": "MIT",
+  "optionalDependencies": {
+    "vis": "^4.16.1"
+  },
+  "repository":{
+    "type": "git",
+    "url": "git://github.com/alexhcbrown/glrzero.git"
+  }
 }
