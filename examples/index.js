@@ -6,9 +6,9 @@ var Grammar = require("../lib/Grammar"),
 var g = new Grammar(["A", "B", "C"]);
 
 g.addRules({
-
     "S" : [["A","E","B","E"],["B"]],
-    "E": [["C"]]
+    "E": [["C"],["F","B"]],
+    "F": [["A"],[""]]
 });
 
 /*g.build('S');
