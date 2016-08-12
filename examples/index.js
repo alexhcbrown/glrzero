@@ -3,12 +3,13 @@ var Grammar = require("../lib/Grammar"),
     Diagram = require("../lib/Diagram");
 
 
-var g = new Grammar(["A", "B", "C"]);
+var g = new Grammar(["A", "B", "C", "WS"]);
 
 g.addRules({
-    "S" : [["A","E","B","E"],["B"]],
-    "E": [["C"],["F","B"]],
-    "F": [["A"],[""]]
+    "S" : [["A","E","B","E"],["B","G"]],
+    "E": [["C","F"]],
+    "F": [["B"],["A","E"]],
+    "G": [["WS","G"],[""]]
 });
 
 /*g.build('S');
@@ -31,11 +32,19 @@ function buildPreRules(sOps) {
         nodes = nodes.concat(data.nodes);
         edges = edges.concat(data.edges);
     });
-    Diagram.drawFromData(nodes,edges,document.getElementById("container2"));
+    Diagram.drawFromData(nodes,edges,document.getElementById("container"));
 };
 
 buildPreRules(g.stateOptions);
 var test = new State("A","Test");
 var start = g.buildTraverse("S",[test]);
 Diagram.drawStateDiagram(start,
-    document.getElementById('container'));
+    document.getElementById('container2'));
+
+console.log(g.toBePopulated);
+g.populate();
+
+console.log(start);
+
+Diagram.drawStateDiagram(start,
+    document.getElementById('container3'));
