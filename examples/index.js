@@ -7,8 +7,8 @@ var g = new Grammar(["A", "B", "C"]);
 
 g.addRules({
 
-    'S' : [['A','B','S'],['B','E','C']],
-    'E' : [['C']]
+    "S" : [["A","E","B","E"],["B"]],
+    "E": [["C"]]
 });
 
 /*g.build('S');
@@ -35,8 +35,7 @@ function buildPreRules(sOps) {
 };
 
 buildPreRules(g.stateOptions);
-
-var start = new State("","Start");
-start.addStates(g.buildTraverse("S"));
+var test = new State("A","Test");
+var start = g.buildTraverse("S",[test]);
 Diagram.drawStateDiagram(start,
     document.getElementById('container'));
